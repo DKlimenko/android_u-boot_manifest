@@ -33,7 +33,7 @@
   <project name="platform/external/python/absl-py" path="external/python/absl-py" revision="f4f3f752e94bc79d36018a54db47be8a01ec6a76" upstream="main" dest-branch="main"/>
   <project name="platform/external/stardoc" path="external/stardoc" revision="b2fa42943c124aa9c7163734493fc7a7559681cf" upstream="main" dest-branch="main"/>
   <project name="platform/external/toybox" path="external/toybox" revision="e0b273fea0a9dac47d045075c12a49b756b17866" upstream="main" dest-branch="main"/>
-  <project name="platform/external/u-boot" path="u-boot" revision="7797ce6be29112e1ce97bede5a899679ec2de8d0" upstream="main" dest-branch="main">
+  <project name="platform/external/u-boot" path="u-boot" revision="cbd67e768104885409b01eee542c203c8dcf8da9" upstream="main" dest-branch="main">
     <linkfile src="build.config.constants" dest="common/build.config.constants"/>
     <linkfile src="device.bazelrc" dest="device.bazelrc"/>
   </project>
