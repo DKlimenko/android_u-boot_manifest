@@ -1,57 +1,52 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <manifest>
-  <remote name="aosp" fetch="https://android.googlesource.com/" review="https://android-review.googlesource.com/"/>
-  
-  <default remote="aosp" revision="main" sync-j="4"/>
-  
-  <project name="kernel/build" path="build/kernel" revision="5bb439de36fd62be4e26c434fea8cdd91341ef0f" upstream="main" dest-branch="main">
-    <linkfile src="kleaf/bazel.sh" dest="tools/bazel"/>
-    <linkfile src="kleaf/bzlmod/bazel.MODULE.bazel" dest="MODULE.bazel"/>
-    <linkfile src="kleaf/bzlmod/empty_BUILD.bazel" dest="common/BUILD.bazel"/>
+  <remote name="aosp" fetch="https://android.googlesource.com/" review="https://android.googlesource.com/" />
+  <default revision="main" remote="aosp" sync-j="4" />
+  <superproject name="kernel/superproject" remote="aosp" revision="u-boot-mainline" />
+  <project path="bootable/libbootloader" name="platform/bootable/libbootloader" revision="7849cfefe8c2e73d535b0c9322383195901d2e63" />
+  <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" revision="605c838fdb45a6d89ff132310faea0fe63abe7d3" />
+  <project path="build/kernel" name="kernel/build" revision="554ccdb95d8b55ec9166353765d76a8986cf07e0">
+    <linkfile dest="tools/bazel" src="kleaf/bazel.sh" />
+    <linkfile dest="MODULE.bazel" src="kleaf/bzlmod/bazel.MODULE.bazel" />
+    <linkfile dest="common/BUILD.bazel" src="kleaf/bzlmod/empty_BUILD.bazel" />
   </project>
-  <project name="kernel/prebuilts/build-tools" path="prebuilts/kernel-build-tools" revision="0d7ad2f30c5c74f15cb1e51c7b4a7e6a789e1b98" upstream="main" dest-branch="main" clone-depth="1"/>
-  <project name="platform/bootable/libbootloader" path="bootable/libbootloader" revision="4db8e55f5f25f7e2631ffce49835863f48489af4" upstream="main" dest-branch="main"/>
-  <project name="platform/build/bazel_common_rules" path="build/bazel_common_rules" revision="1d967e1f8933686a88893c97ff22471e883249a7" upstream="main" dest-branch="main"/>
-  <project name="platform/external/arm-trusted-firmware" path="external/arm-trusted-firmware" revision="54fd6939e177f8ff529b10183254802c76df6d08" upstream="main" dest-branch="main"/>
-  <project name="platform/external/bazel-contrib-bazel_features" path="external/bazel-contrib-bazel_features" revision="f2c744bb419fe8b6a36c29e5c699a8638aebbc5c" upstream="main" dest-branch="main"/>
-  <project name="platform/external/bazel-skylib" path="external/bazel-skylib" revision="2e592d3431c684627439f6a7187b7f8b6e10d673" upstream="main" dest-branch="main"/>
-  <project name="platform/external/bazelbuild-apple_support" path="external/bazelbuild-apple_support" revision="f61d0c0008dd49ee7feba81d6908aa2d148ef64c" upstream="main" dest-branch="main"/>
-  <project name="platform/external/bazelbuild-bazel-central-registry" path="external/bazelbuild-bazel-central-registry" revision="320e66e5967a6a19bc8dcc7bdad4052e9a74e40e" upstream="main" dest-branch="main"/>
-  <project name="platform/external/bazelbuild-platforms" path="external/bazelbuild-platforms" revision="ef3a692c0746f7dadd4fb3b5728d17696f151f9c" upstream="main" dest-branch="main"/>
-  <project name="platform/external/bazelbuild-rules_cc" path="external/bazelbuild-rules_cc" revision="7a77e6202c37c88c557b6091490ef65d395c4e2c" upstream="main" dest-branch="main"/>
-  <project name="platform/external/bazelbuild-rules_java" path="external/bazelbuild-rules_java" revision="60b4892b9de0e6aa7ce291bf85394d6359ff4938" upstream="main" dest-branch="main"/>
-  <project name="platform/external/bazelbuild-rules_license" path="external/bazelbuild-rules_license" revision="f578df4fd057ffe2023728444759535685631548" upstream="main" dest-branch="main"/>
-  <project name="platform/external/bazelbuild-rules_pkg" path="external/bazelbuild-rules_pkg" revision="28730083b2a6e9e1f581656dc69b3f3628f241da" upstream="main" dest-branch="main"/>
-  <project name="platform/external/bazelbuild-rules_python" path="external/bazelbuild-rules_python" revision="f8bf92f8409caae3380402c1e8a673f5ff2b5862" upstream="main" dest-branch="main"/>
-  <project name="platform/external/bazelbuild-rules_rust" path="external/bazelbuild-rules_rust" revision="829e53ea17768f68c7cc8a6b7574ff151e0d9b45" upstream="main" dest-branch="main"/>
-  <project name="platform/external/boringssl" path="external/boringssl" revision="71e08553fce6a835ce39fde15100e2596049ced0" upstream="main" dest-branch="main"/>
-  <project name="platform/external/compiler-rt" path="external/compiler-rt" revision="7c3d14c8b49c529e04be81a3ce6f5cc23712e4c6" upstream="main" dest-branch="main"/>
-  <project name="platform/external/dtc" path="external/dtc" revision="21b18905fc65b0d0811a6c527e53297e05a0f5f3" upstream="main" dest-branch="main"/>
-  <project name="platform/external/lz4" path="external/lz4" revision="5c55ae95f61b57e082eb151ff5a82912bef76d6c" upstream="main" dest-branch="main"/>
-  <project name="platform/external/open-dice" path="external/open-dice" revision="d7861452f2506421733b668ef891725eb36c1728" upstream="main" dest-branch="main"/>
-  <project name="platform/external/pigz" path="external/pigz" revision="9bc9fa17d499ddde88b77820f6d063e16c0cdd42" upstream="main" dest-branch="main"/>
-  <project name="platform/external/python/absl-py" path="external/python/absl-py" revision="f4f3f752e94bc79d36018a54db47be8a01ec6a76" upstream="main" dest-branch="main"/>
-  <project name="platform/external/stardoc" path="external/stardoc" revision="b2fa42943c124aa9c7163734493fc7a7559681cf" upstream="main" dest-branch="main"/>
-  <project name="platform/external/toybox" path="external/toybox" revision="e0b273fea0a9dac47d045075c12a49b756b17866" upstream="main" dest-branch="main"/>
-  <project name="platform/external/u-boot" path="u-boot" revision="cbd67e768104885409b01eee542c203c8dcf8da9" upstream="main" dest-branch="main">
-    <linkfile src="build.config.constants" dest="common/build.config.constants"/>
-    <linkfile src="device.bazelrc" dest="device.bazelrc"/>
+  <project path="external/arm-trusted-firmware" name="platform/external/arm-trusted-firmware" revision="54fd6939e177f8ff529b10183254802c76df6d08" />
+  <project path="external/bazel-contrib-bazel_features" name="platform/external/bazel-contrib-bazel_features" revision="5716f9a0bd746eab4771e443196e3a783c114405" />
+  <project path="external/bazel-skylib" name="platform/external/bazel-skylib" revision="6069e2333e008f46cc8a5f7bc29e6755c9994b59" />
+  <project path="external/bazelbuild-apple_support" name="platform/external/bazelbuild-apple_support" revision="f61d0c0008dd49ee7feba81d6908aa2d148ef64c" />
+  <project path="external/bazelbuild-bazel-central-registry" name="platform/external/bazelbuild-bazel-central-registry" revision="69aaa07f2c2f3241b98af6b18612d47a0c19995e" />
+  <project path="external/bazelbuild-rules_cc" name="platform/external/bazelbuild-rules_cc" revision="c0561796bc9c094f911490910e5993dc4a88fd7d" />
+  <project path="external/bazelbuild-rules_java" name="platform/external/bazelbuild-rules_java" revision="517c1164a3ff233a38e984df7f405de40854e558" />
+  <project path="external/bazelbuild-rules_license" name="platform/external/bazelbuild-rules_license" revision="48d5273aeec5d79939b6db8ed317d870fd967189" />
+  <project path="external/bazelbuild-rules_pkg" name="platform/external/bazelbuild-rules_pkg" revision="8b19e046ffc9db31eda9ae9334476532b5e848ef" />
+  <project path="external/bazelbuild-rules_python" name="platform/external/bazelbuild-rules_python" revision="58e9490c15a2e91e752ee76fab418ad6c3c3b2bd" />
+  <project path="external/bazelbuild-rules_rust" name="platform/external/bazelbuild-rules_rust" revision="d4726bddaa87cc4778e7472feed243fa4b6c267f" />
+  <project path="external/bazelbuild-rules_shell" name="platform/external/bazelbuild-rules_shell" revision="50c6599d83e03a746845ddd2b6ba7ff8d5e57fe0" />
+  <project path="external/bazelbuild-platforms" name="platform/external/bazelbuild-platforms" revision="4f7f82a431cca8808c21cd80c2a6a76ddd7dc141" />
+  <project path="external/boringssl" name="platform/external/boringssl" revision="961e9f471129a985dce42156e144f62503f456a4" />
+  <project path="external/compiler-rt" name="platform/external/compiler-rt" revision="6db888048856710723dc1ee21183a46872a13355" />
+  <project path="external/dtc" name="platform/external/dtc" revision="b15a268e2945ea138679672afa14e52a5c282fe8" />
+  <project path="external/lz4" name="platform/external/lz4" revision="0e16797baf7dd506eddd308819c04f8c2202be32" />
+  <project path="external/open-dice" name="platform/external/open-dice" revision="d8b9e129da47040213a2813cbdc0140814943716" />
+  <project path="external/pigz" name="platform/external/pigz" revision="9bc9fa17d499ddde88b77820f6d063e16c0cdd42" />
+  <project path="external/python/absl-py" name="platform/external/python/absl-py" revision="643ae16524ec9b3537e4ab2b537d5b49254ade8a" />
+  <project path="external/stardoc" name="platform/external/stardoc" revision="97cd2e8d865392c0fefd40878ee7d44cd704ce2b" />
+  <project path="external/toybox" name="platform/external/toybox" revision="36fff7b41eb7daae93f2dfbe945010c8ba3d3d28" />
+  <project path="external/zlib" name="platform/external/zlib" revision="4a47078b2412f3d2dc55fe1eab5022716b11b2a5" />
+  <project path="external/zopfli" name="platform/external/zopfli" revision="bf18ad780cc5fbe885e4a20e850ee5538403fb54" />
+  <project path="u-boot" name="platform/external/u-boot" revision="d5d13fc9dac497acb1cc89a822ec841fe702752a">
+    <linkfile dest="common/build.config.constants" src="build.config.constants" />
+    <linkfile dest="device.bazelrc" src="device.bazelrc" />
   </project>
-  <project name="platform/external/zlib" path="external/zlib" revision="28de0f922b3bf47e4a272ff34a8c6cf1cdeb5cea" upstream="main" dest-branch="main"/>
-  <project name="platform/external/zopfli" path="external/zopfli" revision="e47783fd9ac7e78d0523d35be12ee382df490d63" upstream="main" dest-branch="main"/>
-  <project name="platform/prebuilts/bazel/linux-x86_64" path="prebuilts/bazel/linux-x86_64" revision="5c92123af5646d469fc53ef61994f5bca0306f66" upstream="main" dest-branch="main" clone-depth="1"/>
-  <project name="platform/prebuilts/build-tools" path="prebuilts/build-tools" revision="24ff285ef2e5ce8b9bc43f0a3365f882a70eb7ff" upstream="main" dest-branch="main" clone-depth="1"/>
-  <project name="platform/prebuilts/clang/host/linux-x86" path="prebuilts/clang/host/linux-x86" revision="5dedfe5cc164ec79ae4f7ac23336727c723f9f38" clone-depth="1"/>
-  <project name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" revision="dfa84be8039e99afda2a9b31fc8bb6238d4f1c62" upstream="u-boot-mainline" dest-branch="u-boot-mainline" clone-depth="1"/>
-  <project name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" revision="3b6581a8f1fca1a0a3bf9f91d9eede6de77e414c" upstream="u-boot-mainline" dest-branch="u-boot-mainline" clone-depth="1"/>
-  <project name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" revision="db79fc4c1cfaafcf1a189cfd35873ed9ae1c91f6" upstream="main" dest-branch="main" clone-depth="1"/>
-  <project name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" revision="4142060e4a240923e0d97a4e6b8ed03f602f7fdc" upstream="u-boot-mainline" dest-branch="u-boot-mainline" clone-depth="1"/>
-  <project name="platform/prebuilts/jdk/jdk11" path="prebuilts/jdk/jdk11" revision="559b6c1784e6f579a2212eed78bd053474005fe1" upstream="main" dest-branch="main" clone-depth="1"/>
-  <project name="platform/system/tools/mkbootimg" path="tools/mkbootimg" revision="a306f82e5a60ca1fc0be77ca2afa31a01d797295" upstream="main" dest-branch="main"/>
-  <project name="platform/prebuilts/musl" path="prebuilts/musl" revision="main" upstream="main" dest-branch="main" clone-depth="1"/>
-  <project name="toolchain/prebuilts/ndk/r26" path="prebuilts/ndk-r26" revision="e535051ebc04204cec44bde38f62385d63180388" upstream="main" dest-branch="main" clone-depth="1"/>
-  
-  <superproject name="kernel/superproject" revision="u-boot-mainline"/>
-  
-  <contactinfo bugurl="go/repo-bug"/>
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" clone-depth="1" revision="dfa84be8039e99afda2a9b31fc8bb6238d4f1c62" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" clone-depth="1" revision="3b6581a8f1fca1a0a3bf9f91d9eede6de77e414c" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" revision="49917e030f76c01f35d5a46b66a2b85b2976647c" />
+  <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" clone-depth="1" revision="4142060e4a240923e0d97a4e6b8ed03f602f7fdc" />
+  <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" clone-depth="1" revision="5c92123af5646d469fc53ef61994f5bca0306f66" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" revision="434d914996ecc2abcda46a1841c82946241b1c35" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" revision="e85ad676fe70094dce9991a1cb2cb483859c7c1d" />
+  <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" clone-depth="1" revision="559b6c1784e6f579a2212eed78bd053474005fe1" />
+  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" revision="14bfeb36aa6bc305e9b1fb7bfe1d901f39de29c4" />
+  <project path="prebuilts/ndk-r26" name="toolchain/prebuilts/ndk/r26" clone-depth="1" revision="e535051ebc04204cec44bde38f62385d63180388" />
+  <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" revision="dc9557e28872566e60c1eddb87d48d3a6049fd95" />
 </manifest>
