@@ -48,6 +48,7 @@
   <project name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" revision="4142060e4a240923e0d97a4e6b8ed03f602f7fdc" upstream="u-boot-mainline" dest-branch="u-boot-mainline" clone-depth="1"/>
   <project name="platform/prebuilts/jdk/jdk11" path="prebuilts/jdk/jdk11" revision="559b6c1784e6f579a2212eed78bd053474005fe1" upstream="main" dest-branch="main" clone-depth="1"/>
   <project name="platform/system/tools/mkbootimg" path="tools/mkbootimg" revision="a306f82e5a60ca1fc0be77ca2afa31a01d797295" upstream="main" dest-branch="main"/>
+  <project name="platform/prebuilts/musl" path="prebuilts/musl" revision="main" upstream="main" dest-branch="main" clone-depth="1"/>
   <project name="toolchain/prebuilts/ndk/r26" path="prebuilts/ndk-r26" revision="e535051ebc04204cec44bde38f62385d63180388" upstream="main" dest-branch="main" clone-depth="1"/>
   
   <superproject name="kernel/superproject" revision="u-boot-mainline"/>
