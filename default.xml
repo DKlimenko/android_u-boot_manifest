@@ -4,7 +4,7 @@
 <remote name="github" fetch="ssh://git@github.com"/>
 <default revision="master" remote="aosp" sync-j="4"/>
 <superproject name="kernel/superproject" remote="aosp" revision="u-boot-mainline"/>
-<project path="bootable/libbootloader" name="platform/bootable/libbootloader" revision="ccf35bfd516301ce6efd95783a6c7bd4ca556e55"/>
+<project path="bootable/libbootloader" name="platform/bootable/libbootloader" revision="3f6a4a6394d6fa94cf4d7529a68aa886f3bcd6f0"/>
 <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" revision="4e0aa41c4eda608ec715d704f8ab511e3dd10774"/>
 <project path="build/kernel" name="kernel/build" revision="62985f09053339f891c8f8cd2a1fc81e825d0a4e">
 <linkfile dest="build/build.sh" src="build.sh"/>
