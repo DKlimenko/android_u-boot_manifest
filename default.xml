@@ -5,7 +5,7 @@
 <default revision="master" remote="aosp" sync-j="4"/>
 <superproject name="kernel/superproject" remote="aosp" revision="u-boot-mainline"/>
 <project path="bootable/libbootloader" name="platform/bootable/libbootloader" revision="2a3c10e988de295bdf1cc73402ce75dd663696d0"/>
-<project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" revision="4e0aa41c4eda608ec715d704f8ab511e3dd10774"/>
+<project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" revision="b737089bcd4cb3684cb7264e2d8d97133b454414"/>
 <project path="build/kernel" name="kernel/build" revision="62985f09053339f891c8f8cd2a1fc81e825d0a4e">
 <linkfile dest="build/build.sh" src="build.sh"/>
 <linkfile dest="build/build_utils.sh" src="build_utils.sh"/>
