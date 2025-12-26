@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote name="aosp" fetch="https://android.googlesource.com/" review="https://android-review.googlesource.com/"/>
-  
+  <remote name="github" fetch="ssh://git@github.com"/>
   <default remote="aosp" revision="main" sync-j="4"/>
   
   <project name="kernel/build" path="build/kernel" revision="9055411c6746afad1570568d62ffbdb70f7fe1af">
